@@ -1,0 +1,6 @@
+interface:
+  display_name: "Visual Design ImageGen"
+  short_description: "根据内容简报和参考图生成 UI、汇报图与数据大屏概念图"
+  default_prompt: "使用 $visual-design-imagegen 根据我的内容和参考图生成一张视觉设计概念图。"
+policy:
+  allow_implicit_invocation: false
