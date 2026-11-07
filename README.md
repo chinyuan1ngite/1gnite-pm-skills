@@ -1,8 +1,18 @@
 # 1gnite PM Skills
 
-Reusable agent skills for product management and visual communication workflows.
+Reusable agent skills and a de-identified, project-shaped product-management workflow.
 
 ## Skills
+
+### `government-project-visual-design`
+
+Project adapter for a fictional “某政务项目”. It layers a government-service visual system, request routes, and a sanitized built-in reference-image catalog over the generic image-generation skill. This preserves the project-specific behavior that a generic extraction alone cannot show.
+
+Invoke it explicitly:
+
+```text
+$government-project-visual-design
+```
 
 ### `visual-design-imagegen`
 
@@ -33,3 +43,14 @@ Use only the labels and values I provide; render missing data as placeholders.
 ```
 
 Generated images are design concepts. They do not replace functional interfaces, editable presentation files, or validated data visualizations.
+
+## Project-shaped agent example
+
+[`examples/government-project-product-workflow`](examples/government-project-product-workflow) is a sanitized but structurally faithful example of a government-project product repository. It includes:
+
+- a repository-level `AGENTS.md` with evidence boundaries and reverse-documentation rules;
+- PRD writing, structure, and quality references;
+- one complete PRD → HTML prototype → ledgers → acceptance-test chain;
+- stable Chinese identifiers linking pages, fields, actions, permissions, states, and tests.
+
+The example uses “某政务项目”, reserved example domains, masked personal data, and synthetic records. It is intended to demonstrate the workflow, not to provide real government-system requirements.

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>单位管理 - 某政务项目服务平台</title>
+  <link rel="stylesheet" href="../common.css">
+  <link rel="stylesheet" href="./管理后台_公共原型.css">
+</head>
+<body>
+  <div id="prototype-root"></div>
+  <script id="page-config" type="application/json">
+{
+  "group": "权限管理",
+  "title": "单位管理",
+  "entity": "单位",
+  "sourceUrl": "https://example.invalid/government-project/organizations",
+  "filters": [
+    {
+      "label": "单位名称",
+      "type": "text",
+      "placeholder": "请输入单位名称"
+    },
+    {
+      "label": "联系人",
+      "type": "text",
+      "placeholder": "请输入联系人"
+    },
+    {
+      "label": "联系手机",
+      "type": "text",
+      "placeholder": "请输入联系手机"
+    },
+    {
+      "label": "身份证号",
+      "type": "text",
+      "placeholder": "请输入身份证号"
+    },
+    {
+      "label": "单位类型",
+      "type": "select",
+      "placeholder": "请选择单位类型",
+      "options": [
+        "单位",
+        "人社局",
+        "评委会",
+        "INSTITUTION"
+      ]
+    },
+    {
+      "label": "状态",
+      "type": "select",
+      "placeholder": "请选择状态",
+      "options": [
+        "正常",
+        "禁用"
+      ]
+    }
+  ],
+  "listTitle": "单位列表",
+  "total": 5,
+  "pages": 1,
+  "columns": [
+    {
+      "key": "name",
+      "label": "单位名称"
+    },
+    {
+      "key": "contact",
+      "label": "联系人"
+    },
+    {
+      "key": "phone",
+      "label": "联系手机"
+    },
+    {
+      "key": "idCard",
+      "label": "身份证号",
+      "code": true
+    },
+    {
+      "key": "status",
+      "label": "状态"
+    },
+    {
+      "key": "functionGroup",
+      "label": "功能组"
+    },
+    {
+      "key": "type",
+      "label": "单位类型"
+    },
+    {
+      "key": "created",
+      "label": "创建时间"
+    }
+  ],
+  "rows": [
+    {
+      "name": "示例单位甲",
+      "contact": "示例联系人甲",
+      "phone": "138****0001",
+      "idCard": "4401**********0001",
+      "status": "正常",
+      "functionGroup": "单位审批组A",
+      "type": "单位",
+      "created": "2026-01-15 09:30:00"
+    },
+    {
+      "name": "示例单位乙",
+      "contact": "示例联系人乙",
+      "phone": "138****0002",
+      "idCard": "4401**********0002",
+      "status": "正常",
+      "functionGroup": "单位审批组A",
+      "type": "单位",
+      "created": "2026-01-14 14:20:00"
+    },
+    {
+      "name": "示例单位丙",
+      "contact": "示例联系人丙",
+      "phone": "138****0003",
+      "idCard": "4401**********0003",
+      "status": "正常",
+      "functionGroup": "单位审批组B",
+      "type": "单位",
+      "created": "2026-01-13 11:10:00"
+    },
+    {
+      "name": "示例单位丁",
+      "contact": "示例联系人丁",
+      "phone": "138****0004",
+      "idCard": "4401**********0004",
+      "status": "正常",
+      "functionGroup": "单位审批组",
+      "type": "单位",
+      "created": "2026-01-12 16:40:00"
+    },
+    {
+      "name": "示例单位戊",
+      "contact": "示例联系人戊",
+      "phone": "138****0005",
+      "idCard": "4401**********0005",
+      "status": "正常",
+      "functionGroup": "单位审批组B",
+      "type": "单位",
+      "created": "2026-01-10 10:00:00"
+    }
+  ],
+  "rowActions": [
+    "编辑"
+  ],
+  "formFields": [
+    {
+      "key": "name",
+      "label": "单位名称",
+      "type": "text",
+      "required": true,
+      "placeholder": "请输入单位名称",
+      "help": "页面显示长度上限 50"
+    },
+    {
+      "key": "status",
+      "label": "状态",
+      "type": "radio",
+      "required": true,
+      "options": [
+        "正常",
+        "禁用"
+      ]
+    },
+    {
+      "key": "contact",
+      "label": "联系人",
+      "type": "text",
+      "required": true,
+      "placeholder": "请输入联系人",
+      "help": "页面显示长度上限 30"
+    },
+    {
+      "key": "phone",
+      "label": "联系手机",
+      "type": "text",
+      "required": true,
+      "placeholder": "请输入联系手机",
+      "help": "页面显示长度上限 11"
+    },
+    {
+      "key": "idCard",
+      "label": "身份证号",
+      "type": "text",
+      "required": true,
+      "placeholder": "请输入身份证号",
+      "help": "页面显示长度上限 18"
+    },
+    {
+      "key": "functionGroup",
+      "label": "功能组",
+      "type": "select",
+      "required": true,
+      "placeholder": "请选择用户组",
+      "options": [
+        "单位审批组A",
+        "单位审批组B",
+        "单位审批组",
+        "审批通用功能组"
+      ]
+    },
+    {
+      "key": "type",
+      "label": "单位类型",
+      "type": "select",
+      "required": true,
+      "placeholder": "请选择单位类型",
+      "options": [
+        "单位",
+        "人社局",
+        "评委会",
+        "INSTITUTION"
+      ]
+    }
+  ]
+}
+  </script>
+  <script src="./管理后台_公共原型.js?v=20260720"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+interface:
+  display_name: "某政务项目视觉设计生图"
+  short_description: "按团队规范生成高保真页面、专业汇报图和数据大屏视觉概念图"
+  default_prompt: "使用 $government-project-visual-design 根据我的主题生成高保真页面、汇报图或数据大屏概念图。"
+policy:
+  allow_implicit_invocation: false
