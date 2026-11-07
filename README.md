@@ -1,56 +1,89 @@
 # 1gnite PM Skills
 
-Reusable agent skills and a de-identified, project-shaped product-management workflow.
+面向产品管理与视觉沟通的可复用 Agent Skills，以及一套保留真实项目结构的脱敏政务产品工作流示例。
 
 ## Skills
 
 ### `government-project-visual-design`
 
-Project adapter for a fictional “某政务项目”. It layers a government-service visual system, request routes, and a sanitized built-in reference-image catalog over the generic image-generation skill. This preserves the project-specific behavior that a generic extraction alone cannot show.
+面向虚构“某政务项目”的视觉设计适配层。它在通用视觉生图 Skill 之上叠加现代政务视觉口径、任务路由和经过脱敏处理的内置参考图集，用于体现项目定制 Skill 与纯通用 Skill 的差异。
 
-Invoke it explicitly:
+该 Skill 采用显式调用：
 
 ```text
 $government-project-visual-design
 ```
 
+适合生成：
+
+- 政务 B 端高保真页面概念图；
+- 项目进展、方案架构和问题分析汇报图；
+- 运行态势、监测看板和数据大屏概念图。
+
+示例：
+
+```text
+使用 $government-project-visual-design 生成一张 16:9 的项目进展汇报图。
+主题：本周产品设计进展
+核心结论：完成需求框架、形成原型规范、待确认权限边界
+不要补充未提供的数字和业务规则。
+```
+
 ### `visual-design-imagegen`
 
-Generates raster UI concepts, presentation infographics, and dashboard visuals from a content brief and optional reference images.
+通用视觉生图 Skill。根据内容简报和可选参考图，生成 UI 概念图、汇报信息图和数据大屏视觉方案。
 
-The skill separates reusable image-generation guidance from project-specific content and assets. It includes:
+它将可复用的生图方法与具体项目内容、品牌和资产分离，主要包含：
 
-- brief patterns for UI concepts, presentation infographics, and dashboard concepts;
-- visual hierarchy and composition guidance;
-- reference-image role assignment and source-content isolation;
-- dashboard data-integrity constraints;
-- Codex UI metadata for explicit invocation.
+- UI 概念图、汇报信息图和数据大屏的简报模式；
+- 视觉层级、构图与信息密度规范；
+- 多参考图角色分配和源内容隔离规则；
+- 数据大屏的数据真实性约束；
+- 用于显式调用的 Codex UI 元数据。
 
-## Use
+## 安装与使用
 
-Copy [`skills/visual-design-imagegen`](skills/visual-design-imagegen) into the skill directory used by your agent environment, then invoke:
+将需要的 Skill 目录复制到 Agent 环境使用的 Skill 目录中，然后通过名称显式调用。例如：
 
 ```text
 $visual-design-imagegen
 ```
 
-Example:
-
 ```text
-Use $visual-design-imagegen to create a 16:9 operations dashboard concept.
-Show service volume, completion trend, regional distribution, and current alerts.
-Use only the labels and values I provide; render missing data as placeholders.
+使用 $visual-design-imagegen 生成一张 16:9 的运行态势大屏概念图。
+展示服务量、办结趋势、区域分布和当前预警。
+只使用我提供的标签和数值，缺失数据使用视觉占位。
 ```
 
-Generated images are design concepts. They do not replace functional interfaces, editable presentation files, or validated data visualizations.
+生成结果属于视觉概念稿，不替代功能界面、可编辑演示文稿或经过验证的真实数据可视化。
 
-## Project-shaped agent example
+## 某政务项目产品工作流示例
 
-[`examples/government-project-product-workflow`](examples/government-project-product-workflow) is a sanitized but structurally faithful example of a government-project product repository. It includes:
+[`examples/government-project-product-workflow`](examples/government-project-product-workflow) 是一套经过脱敏处理、但保留真实项目结构与协作方式的政务产品资料库示例，包含：
 
-- a repository-level `AGENTS.md` with evidence boundaries and reverse-documentation rules;
-- PRD writing, structure, and quality references;
-- one complete PRD → HTML prototype → ledgers → acceptance-test chain;
-- stable Chinese identifiers linking pages, fields, actions, permissions, states, and tests.
+- 仓库级 `AGENTS.md`，约束事实、推断、建议、待确认和历史资料的边界；
+- PRD 写作规范、结构模板和质量检查清单；
+- 一条完整的 PRD → HTML 原型 → 结构化台账 → 测试验收链路；
+- 页面、字段、操作、权限、状态和验收标准之间的中文稳定编号；
+- 从现有页面反向补档、差异检查和跨资产一致性维护规则。
 
-The example uses “某政务项目”, reserved example domains, masked personal data, and synthetic records. It is intended to demonstrate the workflow, not to provide real government-system requirements.
+示例统一使用“某政务项目”、保留示例域名、掩码个人数据和合成业务记录，只用于展示工作流与 Agent 特性，不代表任何真实政务系统的需求或数据。
+
+## 目录结构
+
+```text
+1gnite-pm-skills/
+├── skills/
+│   ├── visual-design-imagegen/
+│   └── government-project-visual-design/
+└── examples/
+    └── government-project-product-workflow/
+        ├── AGENTS.md
+        ├── 00_项目口径库/
+        ├── 02_结构化台账/
+        ├── 03_PRD/
+        ├── 04_HTML原型/
+        └── 07_测试验收/
+```
+
+使用示例工作流时，应先用实际项目事实替换 `00_项目口径库` 中的示例内容，不要直接复用其中的字段、角色、状态或流程作为新项目需求。
