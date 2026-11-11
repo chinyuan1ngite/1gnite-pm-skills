@@ -63,9 +63,11 @@ $visual-design-imagegen
 
 - 仓库级 `AGENTS.md`，约束事实、推断、建议、待确认和历史资料的边界；
 - PRD 写作规范、结构模板和质量检查清单；
-- 一条完整的 PRD → HTML 原型 → 结构化台账 → 测试验收链路；
+- 一条可追溯的单位管理链路：模拟会议记录 → 结构化纪要 → 需求与 PRD → HTML 原型和结构化台账 → 验收标准与测试用例；
 - 页面、字段、操作、权限、状态和验收标准之间的中文稳定编号；
 - 从现有页面反向补档、差异检查和跨资产一致性维护规则。
+
+可以用[工作流指南](examples/government-project-product-workflow/工作流指南.md)让 Agent 整理一份会议记录，再对照[测试用例样表](examples/government-project-product-workflow/07_测试验收/功能测试点.csv)检查验收覆盖。
 
 示例统一使用“某政务项目”、保留示例域名、掩码个人数据和合成业务记录，只用于展示工作流与 Agent 特性，不代表任何真实政务系统的需求或数据。
 
@@ -79,7 +81,9 @@ $visual-design-imagegen
 └── examples/
     └── government-project-product-workflow/
         ├── AGENTS.md
+        ├── 工作流指南.md
         ├── 00_项目口径库/
+        ├── 01_原始资料/会议纪要/
         ├── 02_结构化台账/
         ├── 03_PRD/
         ├── 04_HTML原型/
