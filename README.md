@@ -1,8 +1,16 @@
 # 1gnite PM Skills
 
-面向产品管理、项目管理与文档、原型、图例生成的 Agent Skills，以及一套脱敏政务产品工作流示例。
+面向产品经理的 Agent Skills，覆盖会议纪要、需求追溯、测试用例设计和视觉生图。附“某政务项目”的脱敏示例，可从会议记录一路追溯到 PRD、HTML 原型、台账和测试用例。
 
 ## Skills
+
+### [`meeting-minutes`](skills/meeting-minutes/SKILL.md)
+
+把会议逐字稿或笔记整理成中文纪要，提取决定、行动项与待确认问题，并保留时间戳或原文段落。需求评审时可附 PRD 需求来源表。直接处理音频需要当前环境提供获准使用的转写能力。
+
+### [`test-case-design`](skills/test-case-design/SKILL.md)
+
+从 PRD、用户故事或验收标准设计与评审手工功能用例，补齐边界、权限、状态和异常恢复场景。输出可执行步骤、可观察预期、验收覆盖和环境依赖。用例初始标为「未执行」。
 
 ### `government-project-visual-design`
 
@@ -43,10 +51,14 @@ $government-project-visual-design
 
 ## 安装与使用
 
-将需要的 Skill 目录复制到 Agent 环境使用的 Skill 目录中，然后通过名称显式调用。例如：
+将需要的 Skill 目录复制到 Agent 环境使用的 Skill 目录中。以下是三个调用示例。
 
 ```text
-$visual-design-imagegen
+使用 $meeting-minutes，把单位管理的模拟会议记录整理成评审纪要，并附 PRD 需求来源表。
+```
+
+```text
+使用 $test-case-design，根据单位管理 PRD 设计手工用例，并列出验收覆盖、待确认项和联调依赖。
 ```
 
 ```text
@@ -67,7 +79,7 @@ $visual-design-imagegen
 - 页面、字段、操作、权限、状态和验收标准之间的中文稳定编号；
 - 从现有页面反向补档、差异检查和跨资产一致性维护规则。
 
-可以用[工作流指南](examples/government-project-product-workflow/工作流指南.md)让 Agent 整理一份会议记录，再对照[测试用例样表](examples/government-project-product-workflow/07_测试验收/功能测试点.csv)检查验收覆盖。
+可以按[工作流指南](examples/government-project-product-workflow/工作流指南.md)试用两个 Skill，再对照[测试用例样表](examples/government-project-product-workflow/07_测试验收/功能测试点.csv)检查验收覆盖。
 
 示例统一使用“某政务项目”、保留示例域名、掩码个人数据和合成业务记录，只用于展示工作流与 Agent 特性，不代表任何真实政务系统的需求或数据。
 
@@ -76,6 +88,8 @@ $visual-design-imagegen
 ```text
 1gnite-pm-skills/
 ├── skills/
+│   ├── meeting-minutes/
+│   ├── test-case-design/
 │   ├── visual-design-imagegen/
 │   └── government-project-visual-design/
 └── examples/

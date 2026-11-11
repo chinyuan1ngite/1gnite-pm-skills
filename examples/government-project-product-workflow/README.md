@@ -22,6 +22,6 @@
 
 ## 使用方式
 
-让 Agent 按[工作流指南](工作流指南.md)整理会议输入或设计测试用例。
+用 [`$meeting-minutes`](../../skills/meeting-minutes/SKILL.md) 整理会议输入，用 [`$test-case-design`](../../skills/test-case-design/SKILL.md) 从 PRD 设计用例。演示素材和调用示例见[工作流指南](工作流指南.md)。
 
 将本目录复制为新项目骨架，先补齐 `00_项目口径库` 中的项目事实，再让 agent 按 `AGENTS.md` 工作。不要直接把示例字段、角色、状态或流程当成新项目需求。
